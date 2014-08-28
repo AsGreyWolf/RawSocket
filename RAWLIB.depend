@@ -1,0 +1,72 @@
+# depslib dependency file v1.0
+1409234424 source:/home/q/Рабочий стол/RawSocket/EthSocket.cpp
+	"EthSocket.h"
+
+1409237572 /home/q/Рабочий стол/RawSocket/EthSocket.h
+	<linux/if_packet.h>
+	<netinet/if_ether.h>
+	<iostream>
+	<stdlib.h>
+	<sys/socket.h>
+	<arpa/inet.h>
+	<netinet/in.h>
+	<unistd.h>
+	<ctime>
+	<stdio.h>
+	<string.h>
+	<arpa/inet.h>
+	<string>
+	<sys/ioctl.h>
+	<net/if.h>
+	<fstream>
+
+1409149083 source:/home/q/Рабочий стол/RawSocket/RAWLIB.cpp
+	"RAWLIB.h"
+	<fstream>
+
+1407391665 /home/q/Рабочий стол/RawSocket/RAWLIB.h
+	<netinet/ip_icmp.h>
+	<netinet/udp.h>
+	<netinet/tcp.h>
+	<netinet/ip.h>
+	<linux/if_packet.h>
+	<netinet/if_ether.h>
+	<iostream>
+	<stdlib.h>
+	<sys/socket.h>
+	<arpa/inet.h>
+	<netinet/in.h>
+	<unistd.h>
+	<ctime>
+	<stdio.h>
+	<string.h>
+	<arpa/inet.h>
+	<string>
+	<sys/ioctl.h>
+	<net/if.h>
+
+1409233809 source:/home/q/Рабочий стол/RawSocket/testrawlib.cpp
+	"DnsSocket.h"
+	<stdio.h>
+
+1409235964 source:/home/q/Рабочий стол/RawSocket/IpSocket.cpp
+	"IpSocket.h"
+
+1409227603 /home/q/Рабочий стол/RawSocket/IpSocket.h
+	"EthSocket.h"
+	<netinet/ip.h>
+
+1409230459 /home/q/Рабочий стол/RawSocket/UdpSocket.h
+	"IpSocket.h"
+
+1409236174 source:/home/q/Рабочий стол/RawSocket/UdpSocket.cpp
+	"UdpSocket.h"
+	<netinet/udp.h>
+
+1409237562 source:/home/q/Рабочий стол/RawSocket/DnsSocket.cpp
+	"DnsSocket.h"
+
+1409233549 /home/q/Рабочий стол/RawSocket/DnsSocket.h
+	"UdpSocket.h"
+	<vector>
+

@@ -1,26 +1,18 @@
-#include "RAWLIB.h"
+#include "DnsSocket.h"
 #include <stdio.h>
-RawSocket* s;
-int main(){
-    s=new RawSocket("192.168.1.1",80,"8.8.8.8",53,SOCKET_TYPE_DNS);
-    unsigned char data[100];
-    memcpy(data,(unsigned char*)"www.google.com.",15);
-	dnsa* answer=s->gethostbyname(data,T_A);
-    int newsize=sizeof(dnsa)*s->ans_count;
-    printf("resolver (%d):\n",newsize);
+DnsSocket* s;
+int main()
+{
+	s=new DnsSocket("192.168.1.3",8303,"192.168.1.1",53);
+	unsigned char data[100];
+	memcpy(data,(unsigned char*)"www.google.com.",15);
+	vector<in_addr>val=s->gethostbyname(data,T_A);
 
-	for(char* p = (char*)answer; p<( (char*)answer+newsize); ++p)
+	for(int i=0; i<val.size(); i++)
 	{
-		printf("%02X ", (char)*p);
+		printf("Answer:\n");
+		printf("ip:%s\n",inet_ntoa(val[i]));
 	}
 
-	printf("\n");
-	struct in_addr ip_addr;
-    ip_addr.s_addr = answer->aaddr;
-    for(int i=0;i<s->ans_count;i++){
-		printf("Answer:\n");
-		printf("Name:%u, type:%u, class:%u, ttl:%u, length:%u, ip:%s\n",htons(answer->aname),htons(answer->atype),htons(answer->aclass),(answer->attl),htons(answer->alength),inet_ntoa(ip_addr));
-		answer++;
-	}
-    return 0;
+	return 0;
 }
